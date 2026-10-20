@@ -1,0 +1,29 @@
+# Конфигурация Linux Security Auditor
+
+# Уровни критичности, которые будут отображаться
+# possible: critical, high, medium, low, info
+min_severity: info
+
+# Какие проверки запускать (true/false)
+checks:
+  users: true
+  ssh: true
+  permissions: true
+  network: true
+  packages: true
+  services: true
+  firewall: true
+  cron: true
+
+# Настройки отчёта
+report:
+  output_dir: reports
+  formats:
+    - markdown
+    - html
+  include_passed: false   # показывать ли успешно пройденные проверки
+
+# Пороги
+thresholds:
+  max_failed_logins: 5
+  world_writable_critical: true
